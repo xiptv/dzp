@@ -427,7 +427,7 @@ def updateCheck(self, Version):
           return message
 
     check = UpdateChecker()
-    check.URL = "https://raw.githubusercontent.com/shirooo39/MiXLab/master/resources/update.xml"
+    check.URL = "https://raw.githubusercontent.com/xiptv/dzp/master/resources/update.xml"
     currentVersion = check.getVersion("currentVersion")
     message = check.getMessage("message")
 
@@ -549,10 +549,10 @@ def installJDownloader():
         )
         runSh("java -jar /root/.JDownloader/JDownloader.jar -norestart -h")
         runSh(
-            "wget -q https://shirooo39.github.io/MiXLab/resources/packages/jdownloader/sevenzipjbinding1509.jar -O /root/.JDownloader/libs/sevenzipjbinding1509.jar"
+            "wget -q https://shirooo39.github.io/xiptv/resources/packages/jdownloader/sevenzipjbinding1509.jar -O /root/.JDownloader/libs/sevenzipjbinding1509.jar"
         )
         runSh(
-            "wget -q https://shirooo39.github.io/MiXLab/resources/packages/jdownloader/sevenzipjbinding1509Linux.jar -O /root/.JDownloader/libs/sevenzipjbinding1509Linux.jar"
+            "wget -q https://shirooo39.github.io/xiptv/resources/packages/jdownloader/sevenzipjbinding1509Linux.jar -O /root/.JDownloader/libs/sevenzipjbinding1509Linux.jar"
         )
 
 Email = widgets.Text(placeholder="*Required", description="Email:")
@@ -772,10 +772,10 @@ def addUtils():
         runSh("mkdir -p -m 777 /usr/local/sessionSettings")
     if not checkAvailable("/content/upload.txt"):
         runSh("touch /content/upload.txt")
-    if not checkAvailable("/root/.ipython/mixlab.py"):
+    if not checkAvailable("/root/.ipython/dzplab.py"):
         runSh(
-            "wget -qq https://shirooo39.github.io/MiXLab/resources/mixlab.py \
-                -O /root/.ipython/mixlab.py"
+            "wget -qq https://xiptv.github.io/dzp/resources/dzplab.py \
+                -O /root/.ipython/dzplab.py"
         )
     if not checkAvailable("checkAptUpdate.txt", userPath=True):
         runSh("apt update -qq -y")
@@ -806,7 +806,7 @@ def uploadRcloneConfig(localUpload=False):
         return
     elif not localUpload:
         runSh(
-            "wget -qq https://shirooo39.github.io/MiXLab/resources/configurations/rclone/rclone.conf \
+            "wget -qq https://xiptv.github.io/dzp/resources/configurations/rclone/rclone.conf \
                 -O /usr/local/sessionSettings/rclone.conf"
         )
     else:
@@ -839,7 +839,7 @@ def uploadQBittorrentConfig():
         "mkdir -p -m 666 /content/qBittorrent /root/.qBittorrent_temp /root/.config/qBittorrent"
     )
     runSh(
-        "wget -qq https://shirooo39.github.io/MiXLab/resources/configurations/qbittorrent/qBittorrent.conf \
+        "wget -qq https://xiptv.github.io/dzp/resources/configurations/qbittorrent/qBittorrent.conf \
             -O /root/.config/qBittorrent/qBittorrent.conf"
     )
     data = {"uploaded": "True"}
